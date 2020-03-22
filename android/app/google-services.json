@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "422934294076",
+    "firebase_url": "https://bempromotora-7534b.firebaseio.com",
+    "project_id": "bempromotora-7534b",
+    "storage_bucket": "bempromotora-7534b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422934294076:android:2e65c51b08e2f2d6c45d39",
+        "android_client_info": {
+          "package_name": "com.example.bempromotora_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422934294076-0kids4kmvkr04skod0kt825am9mmh01a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bempromotora_app",
+            "certificate_hash": "3681f0ffc11189ccfaae8a39c0d980ee20f00bb3"
+          }
+        },
+        {
+          "client_id": "422934294076-2b61fmnj3jf1pl9fg37gbkmhbu9p7p1k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDApXIzBnxLdzwrEQ6_eXavE-s2w9u1xok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422934294076-8sdvf2bfouego0adu6i3ianhvriusv57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
