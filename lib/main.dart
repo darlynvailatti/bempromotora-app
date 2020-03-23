@@ -24,8 +24,10 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           title: 'Flutter Demo',
           theme: ThemeData(
-            primaryColor: Colors.blue,
-            accentColor: Colors.white
+            accentColor: Colors.white,
+            iconTheme: IconThemeData(
+              color: Colors.white
+            )
           ),
           initialRoute: LoginScreen.ROUTE_NAME,
           routes: {

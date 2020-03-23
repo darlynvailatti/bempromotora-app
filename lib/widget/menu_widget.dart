@@ -25,9 +25,11 @@ class MenuWidget extends StatelessWidget{
           builder: (ctx, state) {
 
             String userName = "";
+            String login = "";
             if(state is ContextoStateLoginSuccess) {
               ContextoStateLoginSuccess loginSuccess = state;
               userName = state.userName;
+              login = state.login;
             }
 
             return Drawer(
@@ -45,11 +47,11 @@ class MenuWidget extends StatelessWidget{
                           size: 100,
                         ),
                         SizedBox(height: 20,),
-                        Text('${userName}'),
+                        Text('${login == null ? userName : login}'),
                       ],
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                   ListTile(

@@ -40,6 +40,7 @@ Future<List<ClienteModel>> _httpPostNewCliente(NewClienteModel newClienteModel) 
     'dataNascimento': new DateFormat('yyyy-MM-dd').format(newClienteModel.dataNascimento),
     'nome': newClienteModel.nome,
     'cpf': newClienteModel.cpf,
+    'matriculaConvenio': newClienteModel.matriculaConvenico,
   });
   await http.post(
       endpointURL,

@@ -49,14 +49,14 @@ class _ClientesScreenState extends State<ClientesScreen> {
                       ),
                     ],
                   ),
-                  trailing: ClipOval(
+                  leading: ClipOval(
                     child: Material(
-                      color: Colors.blue, // button color
+                      color: Theme.of(context).primaryColor, // button color
                       child: InkWell(
                         splashColor: Theme.of(context).primaryColorLight, // inkwell color
                         child: SizedBox(
-                            width: 56,
-                            height: 56,
+                            width: 40,
+                            height: 40,
                             child: Icon(
                               Icons.attach_money,
                               color: Colors.white,

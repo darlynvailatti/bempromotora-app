@@ -33,7 +33,10 @@ class _LoginScreenState extends State<LoginScreen> {
           height: 60.0,
           child:  TextFormField(
             controller: _emailController,
-            decoration: const InputDecoration(labelText: 'Email'),
+            decoration: const InputDecoration(
+                icon: Icon(Icons.alternate_email),
+                labelText: 'Email'
+            ),
             validator: (String value) {
               if (value.isEmpty) {
                 return 'Obrigatório';
@@ -51,14 +54,14 @@ class _LoginScreenState extends State<LoginScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         SizedBox(height: 5),
-        Container(
-          alignment: Alignment.centerLeft,
-          height: 60.0,
-          child:
           TextFormField(
-            obscureText: true,
             controller: _passwordController,
-            decoration: const InputDecoration(labelText: 'Senha'),
+            decoration: const InputDecoration(
+                icon: Icon(Icons.vpn_key),
+                labelText: 'Senha',
+                labelStyle: TextStyle(color: Colors.black),
+            ),
+            obscureText: true,
             validator: (String value) {
               if (value.isEmpty) {
                 return 'Obrigatório';
@@ -66,7 +69,6 @@ class _LoginScreenState extends State<LoginScreen> {
               return null;
             },
           ),
-        ),
       ],
     );
   }
@@ -93,7 +95,6 @@ class _LoginScreenState extends State<LoginScreen> {
             data: ThemeData(unselectedWidgetColor: Theme.of(context).accentColor),
             child: Checkbox(
               value: _rememberMe,
-              checkColor: Colors.white,
               activeColor: Theme.of(context).primaryColor,
               onChanged: (value) {
                 setState(() {

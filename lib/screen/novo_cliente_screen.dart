@@ -33,6 +33,8 @@ class _NovoClienteScreenState extends State<NovoClienteScreen> {
 
   final TextEditingController _cpfController = TextEditingController();
 
+  final TextEditingController _matriculaController = TextEditingController();
+
   List<ConvenioModel> loadedConvenios = [];
 
   ConvenioModel _selectedConvenio;
@@ -52,10 +54,7 @@ class _NovoClienteScreenState extends State<NovoClienteScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         SizedBox(height: 5),
-        Container(
-          alignment: Alignment.centerLeft,
-          height: 60.0,
-          child: TextFormField(
+        TextFormField(
             controller: _nomeController,
             decoration: const InputDecoration(labelText: 'Nome'),
             validator: (String value) {
@@ -65,7 +64,6 @@ class _NovoClienteScreenState extends State<NovoClienteScreen> {
               return null;
             },
           ),
-        ),
       ],
     );
   }
@@ -75,10 +73,7 @@ class _NovoClienteScreenState extends State<NovoClienteScreen> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         SizedBox(height: 5),
-        Container(
-          alignment: Alignment.centerLeft,
-          height: 60.0,
-          child: TextFormField(
+        TextFormField(
             controller: _cpfController,
             decoration: const InputDecoration(labelText: 'CPF'),
             validator: (String value) {
@@ -87,7 +82,6 @@ class _NovoClienteScreenState extends State<NovoClienteScreen> {
               }
               return null;
             },
-          ),
         ),
       ],
     );
@@ -201,15 +195,19 @@ class _NovoClienteScreenState extends State<NovoClienteScreen> {
                         .of(_buildContext)
                         .primaryColor,
                     onPressed: () {
-                      NewClienteModel newClienteModel = new NewClienteModel(
-                          cpf: _cpfController.text,
-                          nome: _nomeController.text,
-                          dataNascimento: _pickedDate,
-                          idConvenio: _selectedConvenio.idConvenio
-                      );
+                      var isFormValid = _formKey.currentState.validate();
+                      if(isFormValid) {
+                        NewClienteModel newClienteModel = new NewClienteModel(
+                            cpf: _cpfController.text,
+                            nome: _nomeController.text,
+                            dataNascimento: _pickedDate,
+                            idConvenio: _selectedConvenio.idConvenio,
+                            matriculaConvenico: _matriculaController.text
+                        );
 
-                      _newClienteBcoc.dispatch(
-                          NewClienteEventCreate(newClienteModel));
+                        _newClienteBcoc.dispatch(
+                            NewClienteEventCreate(newClienteModel));
+                      }
                     },
                   )
                 ],
@@ -264,6 +262,22 @@ class _NovoClienteScreenState extends State<NovoClienteScreen> {
     );
   }
 
+
+  Widget _buildMAtriculaConvenioTextField(){
+
+    return TextFormField(
+      controller: _matriculaController,
+      decoration: const InputDecoration(labelText: 'Matrícula'),
+      validator: (String value) {
+        if (value.isEmpty) {
+        return 'Obrigatório';
+        }
+        return null;
+        },
+    );
+
+  }
+
   Widget _buildForm() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 1),
@@ -280,6 +294,10 @@ class _NovoClienteScreenState extends State<NovoClienteScreen> {
               height: 20.0,
             ),
             _buildConvenioList(),
+            SizedBox(
+              height: 20.0,
+            ),
+            _buildMAtriculaConvenioTextField(),
             SizedBox(
               height: 20.0,
             ),

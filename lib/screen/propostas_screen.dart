@@ -75,10 +75,10 @@ class _PropostaScreenState extends State<PropostasScreen> {
             ),
           )
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () => Navigator.of(context).pushNamed(NovaPropostaScreen.ROUTE_NAME),
-      ),
+//      floatingActionButton: FloatingActionButton(
+//        child: Icon(Icons.add),
+//        onPressed: () => Navigator.of(context).pushNamed(NovaPropostaScreen.ROUTE_NAME),
+//      ),
     );
   }
 

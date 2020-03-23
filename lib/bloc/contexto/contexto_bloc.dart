@@ -1,10 +1,8 @@
 import 'package:bempromotora_app/bloc/contexto/contexto_event.dart';
 import 'package:bempromotora_app/bloc/contexto/contexto_state.dart';
-import 'package:bempromotora_app/widget/tab_state_widget.dart';
 
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -25,6 +23,7 @@ class ContextoBloc extends Bloc<ContextoEvent, ContextoState> {
     yield ContextoStateLoading();
 
     bool _success = true;
+    String _loginEmail;
     String _userId;
     String _userName;
     String _messageError;
@@ -46,14 +45,11 @@ class ContextoBloc extends Bloc<ContextoEvent, ContextoState> {
 
     } else if (event is ContextoEventoLoginEmailAndPassword) {
       ContextoEventoLoginEmailAndPassword loginEmailAndPassword = event;
-      String email = loginEmailAndPassword.email;
+      _loginEmail = loginEmailAndPassword.email;
       String password = loginEmailAndPassword.password;
 
-      print(password);
-
-
       try {
-        var firebaseUser = await _handleFirebaseEmailAndPasswordLogin(email, password);
+        var firebaseUser = await _handleFirebaseEmailAndPasswordLogin(_loginEmail, password);
         _userId = firebaseUser.uid;
         _userName = firebaseUser.displayName;
       }catch(error){
@@ -78,7 +74,7 @@ class ContextoBloc extends Bloc<ContextoEvent, ContextoState> {
     if (!_success)
       yield ContextoStateLoginFail(reason: _messageError);
     else
-      yield ContextoStateLoginSuccess(_userId, _userName);
+      yield ContextoStateLoginSuccess(_userId, _userName, _loginEmail);
   }
 
   Future<FirebaseUser> _handleGoogleSignIn() async {

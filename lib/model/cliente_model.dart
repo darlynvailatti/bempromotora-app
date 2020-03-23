@@ -49,7 +49,9 @@ class NewClienteModel{
 
   final int idConvenio;
 
-  NewClienteModel({this.nome, this.dataNascimento, this.cpf, this.idConvenio});
+  final matriculaConvenico;
+
+  NewClienteModel({this.nome, this.dataNascimento, this.cpf, this.idConvenio, this.matriculaConvenico});
 
   factory NewClienteModel.fromJson(Map<String, dynamic> json) => _$NewClienteModelFromJson(json);
 

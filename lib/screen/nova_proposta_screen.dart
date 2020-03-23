@@ -136,7 +136,6 @@ class _NovaPropostaScreenState extends State<NovaPropostaScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: _confirm,
         child: Icon(Icons.check),
-        backgroundColor: Theme.of(context).primaryColor,
       ),
     );
   }

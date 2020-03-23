@@ -1,6 +1,7 @@
 
 abstract class ContextoState {
 
+  String login;
   String userId;
   String userName;
 
@@ -17,9 +18,10 @@ class ContextoStateInitial extends ContextoState {
 
 class ContextoStateLoginSuccess extends ContextoState {
 
-  ContextoStateLoginSuccess(String userId, String userName){
+  ContextoStateLoginSuccess(String userId, String userName, String login){
     this.userName = userName;
     this.userId = userId;
+    this.login = login;
   }
 }
 
