@@ -7,7 +7,7 @@ import 'package:bempromotora_app/bloc/novo_cliente/new_cliente_bloc.dart';
 import 'package:bempromotora_app/model/cliente_model.dart';
 import 'package:bempromotora_app/model/convenio_model.dart';
 import 'package:bempromotora_app/screen/clientes_screen.dart';
-import 'package:bempromotora_app/screen/tab_state_widget.dart';
+import 'package:bempromotora_app/widget/tab_state_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -9,7 +9,7 @@ part 'cliente_model.g.dart';
 
 class ClienteModel {
 
-  final int idCliente;
+  final int id;
 
   final String nome;
 
@@ -19,12 +19,12 @@ class ClienteModel {
 
   final PessoaFisicaModel pessoaFisica;
 
-  ClienteModel({this.idCliente, this.nome, this.dataNascimento, this.bloqueado, this.pessoaFisica});
+  ClienteModel({this.id, this.nome, this.dataNascimento, this.bloqueado, this.pessoaFisica});
 
   factory ClienteModel.fromJson(final json){
 
     return ClienteModel(
-      idCliente: json["idCliente"],
+      id: json["id"],
       nome: json["nome"],
       dataNascimento: DateFormat('yyyy-MM-dd').parse(json["dataNascimento"]),
       bloqueado: json["bloqueado"],

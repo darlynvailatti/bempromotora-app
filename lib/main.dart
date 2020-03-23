@@ -1,10 +1,10 @@
 import 'package:bempromotora_app/bloc/contexto/contexto_bloc.dart';
 import 'package:bempromotora_app/screen/clientes_screen.dart';
 import 'package:bempromotora_app/screen/login_screen.dart';
-import 'package:bempromotora_app/screen/nova_proposta_cliente_screen.dart';
+import 'package:bempromotora_app/screen/nova_proposta_screen.dart';
 import 'package:bempromotora_app/screen/novo_cliente_screen.dart';
 import 'package:bempromotora_app/screen/propostas_screen.dart';
-import 'package:bempromotora_app/screen/tab_state_widget.dart';
+import 'package:bempromotora_app/widget/tab_state_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
           routes: {
             LoginScreen.ROUTE_NAME: (ctx) => LoginScreen(),
             HomeScreen.ROUTE_NAME: (ctx) => HomeScreen(),
-            NovaPropostaClienteScreen.ROUTE_NAME: (ctx) => NovaPropostaClienteScreen(),
+            NovaPropostaScreen.ROUTE_NAME: (ctx) => NovaPropostaScreen(),
             ClientesScreen.ROUTE_NAME : (ctx) => ClientesScreen(),
             PropostasScreen.ROUTE_NAME : (ctx) => PropostasScreen(),
             NovoClienteScreen.ROUTE_NAME: (ctx) => NovoClienteScreen(),

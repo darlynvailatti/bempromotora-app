@@ -3,6 +3,7 @@
 import 'package:bempromotora_app/bloc/proposta/propostas_bloc.dart';
 import 'package:bempromotora_app/bloc/proposta/propostas_events.dart';
 import 'package:bempromotora_app/bloc/proposta/propostas_state.dart';
+import 'package:bempromotora_app/screen/nova_proposta_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -76,7 +77,7 @@ class _PropostaScreenState extends State<PropostasScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () => _propostasBloc.dispatch(PropostasEventLoadAll()),
+        onPressed: () => Navigator.of(context).pushNamed(NovaPropostaScreen.ROUTE_NAME),
       ),
     );
   }

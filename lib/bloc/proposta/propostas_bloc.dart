@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:bempromotora_app/bloc/proposta/propostas_events.dart';
 import 'package:bempromotora_app/common/constants.dart';
-import 'package:bempromotora_app/model/proposta_model.dart';
+import 'package:bempromotora_app/model/proposta/proposta_model.dart';
 import 'package:bloc/bloc.dart';
 
 import 'propostas_state.dart';

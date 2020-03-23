@@ -1,6 +1,6 @@
 import 'package:bempromotora_app/bloc/contexto/contexto_event.dart';
 import 'package:bempromotora_app/bloc/contexto/contexto_state.dart';
-import 'package:bempromotora_app/screen/tab_state_widget.dart';
+import 'package:bempromotora_app/widget/tab_state_widget.dart';
 
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';

@@ -3,6 +3,7 @@ import 'package:bempromotora_app/bloc/cliente/clientes_events.dart';
 import 'package:bempromotora_app/bloc/cliente/clientes_state.dart';
 import 'package:bempromotora_app/bloc/contexto/contexto_bloc.dart';
 import 'package:bempromotora_app/bloc/contexto/contexto_state.dart';
+import 'package:bempromotora_app/screen/nova_proposta_screen.dart';
 import 'package:bempromotora_app/screen/novo_cliente_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +28,7 @@ class _ClientesScreenState extends State<ClientesScreen> {
       ));
     } else if (state is ClientesStateLoaded) {
       return ListView.separated(
+          padding: EdgeInsets.symmetric(vertical: 20),
           separatorBuilder: (context, index) => Divider(
             color: Colors.black,
           ),
@@ -60,6 +62,9 @@ class _ClientesScreenState extends State<ClientesScreen> {
                               color: Colors.white,
                             ),
                         ),
+                        onTap: () {
+                          Navigator.of(context).pushNamed(NovaPropostaScreen.ROUTE_NAME, arguments: cliente);
+                          },
                       ),
                     ),
                   )

@@ -1,4 +1,4 @@
-import 'package:bempromotora_app/model/proposta_model.dart';
+import 'package:bempromotora_app/model/proposta/proposta_model.dart';
 
 abstract class PropostasEvent {}
 
